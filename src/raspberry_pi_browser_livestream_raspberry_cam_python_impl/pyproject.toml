@@ -1,0 +1,20 @@
+[project]
+name="raspberry_pi_browser_livestream_raspberry_cam_python_impl"
+requires-python = ">= 3.8"
+dynamic = ["version"]
+
+authors = [
+  {name = "Jonas Heinle", email = "cataglyphis@jonasheinle.de"}
+]
+maintainers = [
+  {name = "Jonas Heinle", email = "cataglyphis@jonasheinle.de"}
+]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+dependencies = [
+    "flask"
+]
+

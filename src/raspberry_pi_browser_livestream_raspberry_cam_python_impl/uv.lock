@@ -1,0 +1,7 @@
+version = 1
+revision = 1
+requires-python = ">=3.8"
+
+[[package]]
+name = "raspberry-pi-browser-livestream-raspberry-cam-python-impl"
+source = { editable = "." }
