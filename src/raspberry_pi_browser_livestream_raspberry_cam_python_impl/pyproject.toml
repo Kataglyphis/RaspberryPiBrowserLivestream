@@ -10,11 +10,14 @@ maintainers = [
   {name = "Jonas Heinle", email = "cataglyphis@jonasheinle.de"}
 ]
 
+dependencies = [
+    "flask",
+    "loguru"
+]
+
 [build-system]
 requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
-dependencies = [
-    "flask"
-]
-
+[tool.setuptools.dynamic]
+version = {file = "VERSION.txt"}

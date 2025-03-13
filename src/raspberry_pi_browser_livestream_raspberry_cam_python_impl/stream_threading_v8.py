@@ -9,7 +9,7 @@ import queue
 import numpy as np
 
 # Set up logging to log both to console and a file
-log_filename = "catcam.log"  # Log file name
+log_filename = "logs/catcam.log"  # Log file name
 logging.basicConfig(level=logging.INFO,
                     format="%(asctime)s - %(levelname)s - %(message)s",
                     handlers=[
