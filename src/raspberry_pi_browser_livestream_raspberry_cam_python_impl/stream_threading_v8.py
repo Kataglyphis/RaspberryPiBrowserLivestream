@@ -16,7 +16,7 @@ logging.basicConfig(level=logging.INFO,
                         logging.StreamHandler(),  # Output to console
                         logging.FileHandler(log_filename, mode='a')  # Output to file
                     ])
-logger.add(log_filename, rotation="1 MB", compression="zip")
+logger.add(log_filename, rotation="1 MB",retention=10 ,compression="zip")
 
 app = Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0  # Disable caching for static files
