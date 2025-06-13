@@ -56,7 +56,7 @@ test = [
     "ty",               # type checking
 ]
 
-docs = ["sphinx", "sphinx-press-theme", "myst-parser"]
+docs = ["sphinx", "sphinx-rtd-theme", "myst-parser"]
 
 fuzzytests = [
     "atheris", # Fuzz testing
