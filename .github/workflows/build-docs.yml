@@ -1,0 +1,56 @@
+# .github/workflows/build-docs.yml
+name: Build Docs
+
+on:
+  workflow_call:
+    inputs:
+      runner:
+        required: true
+        type: string
+    secrets:
+      SERVER:
+        required: true
+      USERNAME:
+        required: true
+      PW:
+        required: true
+jobs:
+  build-docs:
+    name: Build Documentation
+    runs-on: ${{ inputs.runner }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
+        with:
+          submodules: recursive
+
+      - name: Set up Python
+        uses: actions/setup-python@v5.6.0
+        with:
+          python-version: "3.10"
+
+      - name: Prepare environment
+        run: |
+          python3 --version
+          pip --version
+          python3 -m pip install --upgrade pip
+          pip install -e .[test,docs]
+
+      - name: Copy docs
+        run: |
+          cp README.md docs/source/README.md
+          cp CHANGELOG.md docs/source/CHANGELOG.md
+
+      
+      - name: Build web page
+        run: |
+          cd docs
+          make html
+
+      - name: 📂 Sync files to domain
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.SERVER }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PW }}
+          local-dir: "./docs/build/html/"

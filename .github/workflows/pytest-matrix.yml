@@ -1,0 +1,55 @@
+# .github/workflows/pytest-matrix.yml
+name: Pytest Matrix
+
+on:
+  workflow_call:
+    inputs:
+      runner:
+        required: true
+        type: string
+      packagename:
+        required: true
+        type: string
+      python-versions:
+        required: true
+        type: string
+
+jobs:
+  python-tests:
+    name: Pytest Matrix
+    runs-on: ${{ inputs.runner }}
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ${{ fromJSON(inputs.python-versions) }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
+        with:
+          submodules: recursive
+
+      - name: Set up Python
+        uses: actions/setup-python@v5.6.0
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Prepare environment
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .[test]
+
+      - name: Run tests
+        run: |
+          pytest tests/unit --cov=${{ inputs.packagename }} --cov-report=term-missing --junitxml=docs/test_results/report-${{ matrix.python-version }}.xml
+          python bench/demo_cprofile.py
+          python bench/demo_line_profiler.py
+          python -m memory_profiler bench/demo_memory_profiling.py
+          py-spy record -o profile.svg -- python bench/demo_py_spy.py
+          pytest bench/demo_pytest_benchmark.py
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4.6.2
+        with:
+          name: reports-${{matrix.python-version}}-${{ inputs.runner }}-${{ github.run_id }}
+          path: docs/test_results/
