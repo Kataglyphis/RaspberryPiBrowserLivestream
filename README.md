@@ -9,7 +9,6 @@
 <h4 align="center">This repo achieves a livestream from a raspberry pi to a browser.<a href="https://jonasheinle.de" target="_blank"></a>.</h4>
 
 [![Ubuntu 24.04 Workflow](https://github.com/Kataglyphis/RaspberryPiBrowserLivestream/actions/workflows/ubuntu-24.04.yml/badge.svg)](https://github.com/Kataglyphis/RaspberryPiBrowserLivestream/actions/workflows/ubuntu-24.04.yml)
-[![Windows 2025 Workflow](https://github.com/Kataglyphis/RaspberryPiBrowserLivestream/actions/workflows/windows-2025.yml/badge.svg)](https://github.com/Kataglyphis/RaspberryPiBrowserLivestream/actions/workflows/windows-2025.yml)
 [![Ubuntu 24.04 ARM Workflow](https://github.com/Kataglyphis/RaspberryPiBrowserLivestream/actions/workflows/ubuntu-24.04-arm.yml/badge.svg)](https://github.com/Kataglyphis/RaspberryPiBrowserLivestream/actions/workflows/ubuntu-24.04-arm.yml)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/paypalme/JonasHeinle)
 [![Twitter](https://img.shields.io/twitter/follow/Cataglyphis_?style=social)](https://twitter.com/Cataglyphis_)
