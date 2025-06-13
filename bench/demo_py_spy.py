@@ -1,5 +1,5 @@
 import time
-from kataglyphispythonpackage.dummy import SimpleMLPreprocessor
+from raspberrypibrowserlivestream.dummy import SimpleMLPreprocessor
 
 
 def main():

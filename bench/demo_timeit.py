@@ -1,6 +1,6 @@
 import timeit
 
-from kataglyphispythonpackage.demo import SimpleMLPreprocessor
+from raspberrypibrowserlivestream.demo import SimpleMLPreprocessor
 
 
 def run():

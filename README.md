@@ -138,11 +138,11 @@ There are three major ways to install this package in your environment:
 
 1. **Install directly via pip:**
    ```bash
-   pip install KataglyphisPythonPackage@git+https://github.com/Kataglyphis/RaspberryPiBrowserLivestream
+   pip install raspberrypibrowserlivestream@git+https://github.com/Kataglyphis/RaspberryPiBrowserLivestream
    ```
    or install a specific tagged version:
    ```bash
-   pip install KataglyphisPythonPackage@git+https://github.com/Kataglyphis/RaspberryPiBrowserLivestream@v0.0.1
+   pip install raspberrypibrowserlivestream@git+https://github.com/Kataglyphis/RaspberryPiBrowserLivestream@v0.0.1
    ```
 
 2. **Install after cloning the repo:**
@@ -237,7 +237,7 @@ If you have examples or demonstrations, add them here.
 
 ## References
 
-KataglyphisPythonPackage is used in the following repos/packages:
+raspberrypibrowserlivestream is used in the following repos/packages:
 - Adapt this list to reference actual uses.
 
 ---

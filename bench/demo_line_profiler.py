@@ -1,4 +1,4 @@
-from kataglyphispythonpackage.dummy import SimpleMLPreprocessor
+from raspberrypibrowserlivestream.dummy import SimpleMLPreprocessor
 
 import sys
 from line_profiler import LineProfiler

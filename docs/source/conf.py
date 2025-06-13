@@ -13,7 +13,7 @@ from pathlib import Path
 sys.path.insert(0, os.path.abspath("../../"))
 
 version: str = Path("../../VERSION.txt").read_text().strip()
-project = "kataglyphispythonpackage"
+project = "raspberrypibrowserlivestream"
 copyright = "2025, Jonas Heinle"
 author = "Jonas Heinle"
 release = version
